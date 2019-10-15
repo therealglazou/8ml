@@ -8,4 +8,5 @@
 
 import { EightML_splitter } from "./splitter.js";
 import { EightML_item_list } from "./item-list.js";
+import { EightML_item_list_header } from "./item-list-header.js";
 import { EightML } from "./main.js";

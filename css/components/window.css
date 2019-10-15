@@ -19,7 +19,7 @@ div[data-8ml-role="window"] {
   width: 600px;
   height: 400px;
   border-radius: 8px;
-  padding: 4px;
+  padding: 0px;
 }
 
 div[data-8ml-role="window"][data-8ml-direction="row"] {

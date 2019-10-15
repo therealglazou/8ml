@@ -1,0 +1,79 @@
+/*
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/.
+ *
+ * Original contributor: Daniel Glazman
+ */
+
+ul[data-8ml-role="item-list"] {
+  list-style-type: none;
+  list-style-position: inside;
+  font-size: 13px;
+  transition: max-height 0.1s linear 0s;
+  overflow: hidden;
+  padding-left: 16px;
+}
+
+ul[data-8ml-role="item-list"] li {
+  display: flex;
+  line-height: 28px;
+  margin-left: -16px;
+  align-items: center;
+  border: thin solid transparent;
+}
+
+ul[data-8ml-role="item-list"] li[data-8ml-count] {
+  justify-content: space-between;
+}
+
+ul[data-8ml-role="item-list"] li p {
+  padding: 0px;
+  margin: 0px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+}
+
+ul[data-8ml-role="item-list"] li[data-8ml-count]::after,
+ul[data-8ml-role="item-list"] li[data-8ml-count][data-8ml-selected="true"]:not(:focus)::after {
+  content: attr(data-8ml-count);
+  margin-left: 1em;
+  margin-right: 16px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: #34404f;
+  border: #242d38 thin solid;
+  position: relative;
+  line-height: 18px;
+  border-radius: 12px;
+}
+
+ul[data-8ml-role="item-list"] li[data-8ml-count][data-8ml-selected="true"]::after,
+ul[data-8ml-role="item-list"] li[data-8ml-count]:focus::after {
+  background-color: #064fa4;
+  border-color: #09346c;
+}
+
+ul[data-8ml-role="item-list"] [icon]::before {
+  content: attr(icon);
+  margin-left: 16px;
+  margin-right: 16px;
+  font-size: 18px;
+}
+
+ul[data-8ml-role="item-list"] li[data-8ml-selected="true"] {
+  background-color: #485464;
+  border: thin solid #5e6977;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+ul[data-8ml-role="item-list"] li:focus {
+  background-color: #095cc2;
+  border: thin solid #2a6ec8;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  outline: 0px none;
+}
