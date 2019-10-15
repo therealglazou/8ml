@@ -9,6 +9,7 @@
 hr[data-8ml-role="splitter"] {
   border: 0px none;
   background-color: var(--8ml-color-fg-gray-cf);
+  position: relative;
 }
 
 hr[data-8ml-role="splitter"][data-8ml-direction="row"] {

@@ -10,7 +10,7 @@ div[data-8ml-role="navbar"] {
   padding-left: 32px;
   padding-top: 32px;
   white-space: nowrap;
-  flex: 0 1 0%;
+  overflow: hidden;
 }
 
 div[data-8ml-role="navbar"].dark-blue {

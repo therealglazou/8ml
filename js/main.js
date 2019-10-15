@@ -13,8 +13,7 @@ export class EightML {
 
     [
       "click",
-      "mousedown",
-      "mouseup"
+      "keydown"
     ].forEach((aName) => {
       document.addEventListener(aName,
         (aEvent) => { this.handleEvent(aEvent); });
@@ -23,22 +22,27 @@ export class EightML {
 
   handleEvent(aEvent) {
     const target = this.findRoleHolder(aEvent.target);
+    const originalTarget = (aEvent.target.nodeType == Node.ELEMENT_NODE)
+                           ? aEvent.target
+                           : aEvent.target.parentNode;
     if (!target)
       return;
-    const role = target.getAttribute(this.kROLE_ATTR);
+    const role = EightML.capturing || target.getAttribute(this.kROLE_ATTR);
 
     const listener = EightML.listenerArray[role];
     const listenerName = "on" + aEvent.type;
     if (listener
         && listener[listenerName]
         && typeof listener[listenerName] == "function") {
-      listener[listenerName](target, aEvent.type);
+      listener[listenerName](originalTarget, target, aEvent);
     }
   }
 
   findRoleHolder(aElement) {
     let elt = aElement;
-    while (elt && !elt.hasAttribute(this.kROLE_ATTR))
+    while (elt
+           && elt.nodeType == Node.ELEMENT_NODE
+           && !elt.hasAttribute(this.kROLE_ATTR))
       elt = elt.parentNode;
     return elt;
   }
@@ -53,6 +57,11 @@ export class EightML {
       EightML.listenerArray = {};
 
     EightML.listenerArray[aListener.role] = aListener;
+  }
+
+  static getComputedStyle(aElement, aProperty) {
+    return document.defaultView.getComputedStyle(aElement, null)
+                   .getPropertyValue(aProperty);
   }
 }
 
