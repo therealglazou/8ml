@@ -44,10 +44,13 @@ export class EightML_splitter extends EightML_base {
   }
 
   onmousemove(aOriginalTarget, aTarget, aEvent) {
+    if (!this.selected)
+      return;
+
     this.x = aEvent.clientX;
     this.y = aEvent.clientY;
     if (this.selected) {
-        if (this.property == "row")
+        if (this.property == "width")
           this.selected.style.left = (this.x - this.originalX) + 'px';
         else
           this.selected.style.top = (this.y - this.originalY) + 'px';

@@ -13,7 +13,10 @@ export class EightML {
 
     [
       "click",
-      "keydown"
+      "keydown",
+      "mousedown",
+      "mouseup",
+      "mousemove"
     ].forEach((aName) => {
       document.addEventListener(aName,
         (aEvent) => { this.handleEvent(aEvent); });
@@ -42,6 +45,8 @@ export class EightML {
     let elt = aElement;
     while (elt
            && elt.nodeType == Node.ELEMENT_NODE
+           && elt.parentNode
+           && elt.parentNode.nodeType == Node.ELEMENT_NODE
            && !elt.hasAttribute(this.kROLE_ATTR))
       elt = elt.parentNode;
     return elt;
