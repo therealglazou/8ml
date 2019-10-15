@@ -1,0 +1,14 @@
+body {
+  --8ml-color-bg-main: #f7f7f7;
+  --8ml-color-bg-dark-blue: #3a4759;
+  --8ml-color-fg-gray-cf: #cfcfcf;
+  --8ml-color-fg-gray-d8: #d8dade;
+  --8ml-color-bg-darker-blue: #34404f;
+  --8ml-color-border-darker-blue: #242d38;
+  --8ml-color-bg-darker-selected-blue: #064fa4;
+  --8ml-color-border-darker-selected-blue: #09346c;
+  --8ml-color-bg-selected-blue: #485464;
+  --8ml-color-border-selected-blue: #5e6977;
+  --8ml-color-bg-focus-blue: #095cc2;
+  --8ml-color-border-focus-blue: #2a6ec8;
+}

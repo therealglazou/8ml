@@ -1,0 +1,26 @@
+/*
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/.
+ *
+ * Original contributor: Daniel Glazman
+ */
+
+div[data-8ml-role="box"],
+div[data-8ml-role="vbox"],
+div[data-8ml-role="hbox"] {
+  display: flex;
+  align-items: stretch;
+  justify-content: start;
+}
+
+div[data-8ml-role="box"][data-8ml-direction="row"],
+div[data-8ml-role="hbox"] {
+  flex-direction: row;
+}
+
+div[data-8ml-role="box"][data-8ml-direction="column"],
+div[data-8ml-role="vbox"],
+div[data-8ml-role="box"]:not([data-8ml-direction]) {
+  flex-direction: column;
+}
